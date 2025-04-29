@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Código Fonte do Site</title>
+    <style>
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        p {
+            text-indent: 30px;
+        }
+
+        b.cor#az {
+            color: blue;
+        }
+        b.cor#ver {
+            color: red;
+        }
+        b.cor#ved {
+            color: green;
+        }        
+    </style>   
+
+</head>
+<body>
+    <h1>Desfio HTML</h1>
+    <h2>Capítulo 17: aula 12</h2>
+    <h3>21 de Setembro de 2024</h3>
+    <hr>
+    <h1>Conclusão:</h1>
+
+    <p>
+        Tendo finalizado o projeto será preciso colocá-lo no ar atrvéz do serviço gratuito do GitHub. Será usado o GitHub Desktop para facilitar o processo.
+    </p>
+
+    <pre>
+        <b class="cor" id="az">/*Arquivo de ESTILO .css */</b>
+
+    @charset "UTF-8";
+
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+    @font-face {
+        font-family: 'Android';
+        src: url('../fonts/idroid.otf') format('opentype'); font-weight: normal;
+    }
+
+    <b class="cor" id="ved">/* Configurações GLOBAIS */</b>
+    :root {
+        <b class="cor" id="ved">/* variáveis de cores */</b>
+        --cor0: #c5ebd6;  /* verdemais claro */
+        --cor1: #83e1ad;
+        --cor2: #3ddc84;
+        --cor3: #2fa866;
+        --cor4: #1a5c37;
+        --cor5: #063d1e; /* verde mais escuro */
+
+        <b class="cor" id="ved">/* variáveis de fontes */</b>
+        --fontes-padrao: Arial1, Verdana, Helvetica, sans-serif;
+        --fonte-destaque: 'Bebas Neue', cursive;
+        --fonte-android: 'Android', cursive;
+    }
+
+    <b class="cor" id="ved">/* Seletor especial que ZERA parâmentros */</b>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    body {
+        background-color:var(--cor0);
+        /* background-color: #D9E7AF; */
+        /* background-color: #c5ebd6; */
+        font-family: var(--fontes-padrao);
+    }
+
+    a.externo::after {
+        content: '\00A0\1F517';
+    }
+
+    header {
+        /* background-color: var(--cor4); */
+        background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+        min-height: 150px;
+        text-align: center;
+        padding-top: 40px;
+    }
+    header h1 {
+        color: white;
+        font-family: var(--fonte-destaque);
+        font-size: 3em; 
+        padding-bottom: 20px;
+        text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267);
+        font-weight: normal;
+    }
+    header > p {
+        font-family: var(--fontes-padrao);
+        font-size: 1.2em;
+        color: white;
+        max-width: 600px; <b class="cor" id="ved">/* essa configuração ANULA O text-alin */</b>
+        padding-right: 10px;
+        padding-left: 10px;
+        margin: auto; <b class="cor" id="ved">/* compensa o alinhamento ao CENTRO anulado pela linha anterior */</b>
+        padding-bottom: 50px;
+        text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.315);
+    }
+
+    nav {
+        background-color: var(--cor5);
+        padding: 10px;
+        box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.363);
+    }
+    nav a {
+        color: var(--cor1);
+        padding: 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition-duration: .5s; <b class="cor" id="ved">/* controla a TRANSIÇÃO para a PSEUDO CLASSE */</b>
+    }
+    nav a:hover {
+        background-color: var(--cor3);
+        color: var(--cor5);
+    }
+
+    main {
+        background-color: white;
+        min-width: 300px;
+        max-width: 1000px;
+        margin: auto;  <b class="cor" id="ved">/* A ORDEM influencia */</b>
+        margin-bottom: 30px; <b class="cor" id="ved">/* A ORDEM influencia */</b>
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.418);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    main h1 {
+        color: var(--cor5);
+        font-family: var(--fonte-android);
+        font-size: 1.8em;
+    }
+    main h2 {
+        font-family: var(--fonte-android);
+        color: var(--cor4);
+        font-size: 1.3em;
+        background-image: linear-gradient(to right, var(--cor1), transparent);
+        text-indent: 8px;
+        font-weight: normal;
+    }
+    main img {
+        width: 100%;
+    }
+    main img.pequena {
+        <b class="cor" id="ved">/* width: 50%;  dessa forma provoca ESTOURO DE PIXEL*/</b>
+        max-width: 350px; /* Dessa forma a imagem só terá até 350px */
+        display: block   ;
+        margin: auto;
+    }
+    main p {
+        margin: 15px 0px;
+        text-align: justify;
+        text-indent: 30px;
+        line-height: 2em; <b class="cor" id="ved">/* ESPAÇAMENTO Entre LINHAS (vertical) */</b>
+        font-size: 1em;
+    }
+    main strong {
+        color: var(--cor4);
+        font-weight: bold;
+        /* background-color: var(--cor1); */
+        padding: 2px 6px;
+    }
+    main a {
+        text-decoration: none;
+        font-weight: bold;
+        color: var(--cor5);
+        background-color: var(--cor1);
+        padding: 2px 6px;
+    }
+    main a:hover {
+        text-decoration: underline;
+        color: var(--cor4);
+    }
+
+    div.video {
+        background-color: var(--cor5);    
+        margin: 0px -20px 30px -20px;
+        padding: 20px;
+        padding-bottom: 50%;
+        position: relative; <b class="cor" id="ved">/* coloca-se a POSITION em RELATIVE para ajunste de um IFRAME */</b>
+    }
+    div.video > iframe {
+        position: absolute;  <b class="cor" id="ved">/* com a POSITION em ABSOLUTE é possível mexer em TOP, LEFT, WIDHT e HEIGHT. </b>*/
+        top: 5%;
+        left: 5%;
+        width: 90%;
+        height: 90%;
+    }
+
+    aside {
+        background-color: var(--cor1);
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.281);
+    }
+    aside > ul {
+        list-style-position: inside;  <b class="cor" id="ved">/* coloca os marcadores da lista DENTRO DA CAIXA */</b>
+        columns: 2; <b class="cor" id="ved">/* divide uma LISTA em 2 COLUNAS */</b>
+        list-style-type: '\1F5F8\00A0\00A0';  <b class="cor" id="ved">/* Troca a BOLINHA por um sinal de CHECK */</b>
+    }
+    aside > h3 {
+        background-color: var(--cor4);
+        color: white;
+        margin: -10px -10px 0px -10px; <b class="cor" id="ved">/* Margens NEGATIVAS ajudam a fazer um encaixe de um bloco em outro </b>*/
+        border-radius: 10px 10px 0px 0px; 
+        padding: 10px;
+        
+    }
+
+    footer {
+        background-color: var(--cor5);
+        color: white;
+        text-align: center;
+        font-size: 0.8em;
+        padding: 5px;    
+    }
+    footer a {
+        color: white;
+        font-weight: bolder;
+        text-decoration: none;
+    }
+    footer a:hover {
+        text-decoration: underline;
+        color: var(--cor1);
+    }
+    </pre>
+
+    <pre>
+        <b class="cor" id="az">&lt;!-- Código HTML --&gt;</b>
+
+        &lt;!DOCTYPE html>
+    &lt;html lang="pt-br">
+    &lt;head>
+        &lt;meta charset="UTF-8">
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+        &lt;link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+        &lt;link rel="stylesheet" href="estilo/estyle.css">
+        &lt;title>Como surgiu o mascote do Android&lt;/title>
+    &lt;/head>
+    &lt;body>
+        &lt;header>
+            &lt;h1>Curiosidades de Tectonogia&lt;/h1>
+            &lt;p> Tudo aquilo que você sempre quis saber sobre o mundo Tech, em um único lugar&lt;/p>                
+        &lt;/header>
+        &lt;nav>
+            &lt;a href="#"> Home &lt;/a>
+            &lt;a href="#"> Notícias &lt;/a>        
+            &lt;a href="#"> Contato &lt;/a>
+        &lt;/nav>
+        &lt;main>
+            &lt;article>
+                &lt;h1> História do Mascote do Android &lt;/h1>
+
+                &lt;p>
+                    Provavelmente você sabe que o sistema operacional &lt;strong>Android&lt;/strong>, 
+                    mantido pelo &lt;strong>Google&lt;/strong> é um dos mais utilizados para dispositivos
+                     móveis em todo o mundo. Mas tavez você não saiba que o seu simpático mascote tem um 
+                     nome e uma história muito curiosa? Pois acompanhe esse artigo para aprender muita coisa sobre esse robozinho.                
+                &lt;/p>
+
+                &lt;h2> A primeira versão &lt;/h2>
+
+                &lt;p>A primeira tentativa de criar um mascote surgiu em 2007 e veio de um desenvolvedor
+                 chamado
+                  &lt;a href="https://www.thedrum.com/news/2013/01/06/googles-dan-morrill-reveals-
+                  rejected-android-mascot-designs" target="_blank" class="externo">Dan Morrill&lt;/a>. 
+                  Ele conta que abriu o &lt;a href="https://inkscape.org/pt-br/" target="_blank" 
+                  class="externo">Inkscape&lt;/a> (software livre para vetorização de imagens) e criou 
+                  sua própria versão de robô. O objetivo era apenas personificar o sistema apenas para 
+                  a a sua equipe, não existia nenhuma solicitação da empresa para a criação de um 
+                  mascote.&lt;/p>
+
+                &lt;picture>
+                    &lt;source media="(max-width: 670px)" srcset="imagens/dan-droids-pq.png">
+                    &lt;img src="imagens/dan-droids.png" alt="Primeiro mascote do Android">
+                &lt;/picture>
+
+                &lt;p>
+                    Essa primeira versão bizarra até foi batizada em homenagem ao seu criador: 
+                    seriam os &lt;strong>Dandroids&lt;/strong>.
+                &lt;/p>
+
+                &lt;h2> Surge um novo mascote &lt;/h2>
+
+                &lt;p>
+                    A ideia de ter um mascote foi amadurecendo e a missão foi passada para uma
+                     profissional da área. A ilustradora Russa &lt;a href="https://www.irinablok.com/" 
+                     target="_blank" class="externo">Irina Blok&lt;/a>, também funcionária do Google, 
+                     ficou com a missão de representar o pequeno robô de uma maneira mais agradável.
+                &lt;/p>
+
+                &lt;picture>
+                    &lt;source media="(max-width: 670px)" srcset="imagens/irina-blok-pq.jpg">
+                    &lt;img src="imagens/irina-blok.jpg" alt="Imgamem Irina Blok Criadora do Mascote ">
+                &lt;/picture>
+
+                &lt;p>
+                    A ideia principal da Irina era representar tudo graficamente com poucos traços e de 
+                    forma mais chapada. O desenho também deveria gerar identificação rápida com quem o
+                     olha. Surgiu então o &lt;strong>Bugdroid&lt;/strong>, o novo mascote do Android.
+                &lt;/p>
+
+                &lt;img class="pequena" src="imagens/bugdroid.png" alt="Bugdoid">
+
+                &lt;p>
+                    A principal inspiração para os traços do novo &lt;strong>Bugdroid&lt;/strong> 
+                    veio daqueles bonequinhos que ilustram portas de banheiro para indicar o gênero de 
+                    cada porta. Conta a lenda que a artista estava criando em sua mesa no escritório 
+                    do &lt;strong>Google&lt;/strong> e olhou para o lado dos banheiros e a identificação 
+                    foi imediata: simples, limpo, objetivo.
+                &lt;/p>
+
+                &lt;div class="video">
+                    &lt;iframe width="560" 
+                    height="315" src="https://www.youtube.com/embed/l2UDgpLz20M?si=ey5srIMOqo7veSif" 
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                    clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>&lt;/iframe>
+                &lt;/div>
+                
+                &lt;aside>
+                    &lt;h3> Quer aprender mais? &lt;/h3>
+                    &lt;p>Outro assunto curioso em relação ao Android é que cada versão sempre f
+                    oi nomeada em homenagem a um doce, em ordem alfabética a partir da versão 1.5
+                     até a 9.0.
+                                    
+                    &lt;ul>
+                        &lt;li>1.5 - &lt;abbr title="Bolo de Copo">Cupcake&lt;/abbr>&lt;/li>
+                        &lt;li>1.6 - &lt;abbr title="Rosquinha">Donut&lt;/abbr>&lt;/li>
+                        &lt;li>3.0 - &lt;abbr title="Bomba">Eclair&lt;/abbr>&lt;/li>
+                        &lt;li>2.2 - &lt;abbr title="Iogurte Congelado">Froyo&lt;/abbr>&lt;/li>
+                        &lt;li>2.3 - &lt;abbr title="Biscoito de Gengibre">Gingerbread&lt;/abbr>&lt;/li>
+                        &lt;li>3.0 - &lt;abbr title="Favo de Mel">Honeycomb&lt;/abbr>&lt;/li>
+                        &lt;li>4.0 - &lt;abbr title="Saduiche de Sorvete">Ice Cream Sandwich&lt;/abbr>&lt;/li>
+                        &lt;li>4.1 - &lt;abbr title="Jujuba">Jelly Bean&lt;/abbr>&lt;/li>
+                        &lt;li>4.4 - &lt;abbr title="KitKat">KitKat&lt;/abbr>&lt;/li>
+                        &lt;li>5.0 - &lt;abbr title="Pirulito">Lolipop&lt;/abbr>&lt;/li>
+                        &lt;li>6.0 - &lt;abbr title="Machimelo">Marshmallow&lt;/abbr>&lt;/li>
+                        &lt;li>7.0 - &lt;abbr title="Torrone">Nougat&lt;/abbr>&lt;/li>
+                        &lt;li>8.0 - &lt;abbr title="Oreo (O biscoito)">Oreo&lt;/abbr>&lt;/li>
+                        &lt;li>9.0 - &lt;abbr title="Torta">Pie&lt;/abbr>&lt;/li>
+                    &lt;/ul>
+                    
+                    &lt;p>
+                        Infelizmente, o &lt;strong>Android Q&lt;/strong> não existiu, pois o Google 
+                        resolveu pôr fim a essa divertida prática e começou a usar numerações, o que deu 
+                        origem ao Android 10.                  
+                    &lt;/p>
+                    &lt;p>Acesse aqui o site &lt;a 
+                    href="https://www.android.com/intl/en_uk/what-is-android/" target="_blank" 
+                    class="externo">Android History&lt;/a> para conhecer a sequência das versões 
+                    "adocicadas" e o que cada uma trouxe para o sistema Android.&lt;/p>
+                &lt;/aside>
+                
+                &lt;p>
+                    Então é isso! Espero que você tenha gostado do nosso artigo com essa curiosidade 
+                    sobre o sistema Android e seu simpático mascote.
+                &lt;/p>
+            &lt;/article>
+        &lt;/main>
+        &lt;footer>
+            Site criado por &lt;a href="https://github.com/gustavoguanabara" target="_blank">Gusta 
+            Guanabara&lt;/a> para o &lt;a href="https://www.cursoemvideo.com/" target="_blank">Curso 
+            em Video&lt;/a>
+        &lt;/footer>
+    &lt;/body>
+    &lt;/html>
+    </pre>
+
+</body>
+</html>
